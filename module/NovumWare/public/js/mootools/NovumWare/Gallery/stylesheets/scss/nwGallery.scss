@@ -1,0 +1,36 @@
+/* ---------------------------------- NW GALLERY ----------------------------------- */
+.NWGallery, .NWGallery\:normal, .NWGallery\:popup {
+	display: block;
+	margin: 0px auto;
+	max-width: 800px;
+
+	.nwGallery-mainImage {
+		display: block;
+		margin: 0px auto;
+		max-width: 100%;
+		max-height: 500px;
+	}
+
+	.nwGallery-thumbsList {
+		margin: 10px 0px 0px 0px;
+
+		li {
+			display: inline-block;
+			vertical-align: top;
+			width: 150px;
+			height: 150px;
+			cursor: pointer;
+
+			a {
+				display: inline-block;
+				line-height: 0px;
+				//max-width: 100%;
+				//max-height: 100%;
+			}
+			img {
+				max-width:  100%;
+				max-height: 100%;
+			}
+		}
+	}
+}

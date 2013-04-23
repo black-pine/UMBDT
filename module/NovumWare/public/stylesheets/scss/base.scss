@@ -1,0 +1,44 @@
+// ---------------------------------------------- GENERIC OVERRIDES -----------------------------------------------
+body { position: relative; }
+
+ul {
+	margin-bottom: 0px;
+	list-style-type: none;
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input { height: 16px; }
+
+button { @extend .btn; }
+
+form.form-inline {
+	input[type=checkbox] { margin-top: 0px; }
+	label {
+		width: 150px;
+		padding: 3px 7px 3px 0px;
+		text-align: right;
+		
+		&.required { background: url('/images/required.png') top right no-repeat; }
+	}
+}
+
+
+// ---------------------------------------------- BOOTSTRAP OVERRIDES -----------------------------------------------
+ul.alert { margin-left: 0px; }
+
+#wrapper {
+	@include container-fixed;
+	position: relative;
+	width: auto;
+	max-width: 940px;
+}
+
+.navbar {	
+	.dropdown-menu { margin: 0px; }
+	.dropdown:hover .dropdown-menu { display: block; }
+}
+
+
+// ---------------------------------------------- MEDIA OVERRIDES -----------------------------------------------
+@media (max-width: $widthTablet) { @import './media-tablet.scss'; }
+@media (min-width: $widthPhone) { @import './media-phone.scss'; }
+@media print { @import './media-print.scss'; }

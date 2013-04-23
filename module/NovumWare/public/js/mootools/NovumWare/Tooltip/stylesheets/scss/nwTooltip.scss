@@ -1,0 +1,61 @@
+/* ---------------------------------- RIALTO TOOLTIP ----------------------------------- */
+.NWTooltip, .NWTooltip\:hover, .NWTooltip\:click, .NWTooltip\:clickAlways {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	.nw-tooltip-body {
+		cursor: default;
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 2em;
+		left: 0px;
+		text-align: left;
+		z-index: 4000;
+		&.nw-tooltip-body-visible {
+			display: block;
+			visibility: visible;
+		}
+		.nw-tooltip-triggerOverlay {
+			display: inline-block;
+			position: relative;
+			top: -2.5em;
+			left: -0.5em;
+			padding: 0.417em;
+			border: 1px solid $borderColor;
+			border-bottom: 1px solid $bgColorBase;
+			background-color: $bgColorBase;
+			z-index: 95;
+			@include border-top-radius(5px);
+		}
+		.nw-tooltip-content {
+			position: relative;
+			min-width: 300px;
+			padding: 0.417em;
+			top: -2.6em;
+			left: -2em;
+			background-color: $bgColorBase;
+			border: 1px solid $borderColor;
+			z-index: 94;
+			@extend .border-radius;
+			@extend .box-shadow;
+		}
+	}
+	&.nw-tooltip-right {
+		.nw-tooltip-body {
+			left: auto;
+			right: 0em;
+			.nw-tooltip-triggerOverlay {
+				left: auto;
+				right: -0.5em;
+				float: right;
+			}
+			.nw-tooltip-content {
+				clear: both;
+				left: auto;
+				right: -2em;
+			}
+		}
+	}
+}

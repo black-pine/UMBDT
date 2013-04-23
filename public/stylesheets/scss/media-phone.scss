@@ -1,0 +1,6 @@
+body { padding: 0px 10px; }
+
+.navbar {
+	@extend .navbar-static-top;
+	margin: 0px;
+}

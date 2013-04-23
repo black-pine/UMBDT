@@ -1,0 +1,20 @@
+/* ---------------------------------- NOVUMWARE FORM VALIDATOR ADVICE MESSGE ----------------------------------- */
+.nwValidator-advice {
+	position: absolute;
+	display: inline-block;
+	opacity: 0;
+	margin-left: 3px;
+	padding: 3px 3px 3px 5px;
+	min-width: 100px;
+	background-color: $borderColorError;
+	color: $colorBase;
+	font-size: $fontSizeSmall;
+	//border: 2px solid $borderColorError;
+	//color: $colorError;
+	@extend .border-radious;
+}
+
+form input.validation-failed {
+	background-color: $bgColorError;
+	//border: 1px solid $borderColorError;
+}

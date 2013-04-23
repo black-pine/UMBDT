@@ -1,0 +1,1 @@
+var NWExampleElmt=function(){"use strict";return new Class({Implements:[Options],classPlugin:"NWExampleElmt",elmt:null,initialize:function(e,t){this.setOptions(t);this.elmt=e;this.elmt.store(this.classPlugin,this)}})}();

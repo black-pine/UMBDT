@@ -1,0 +1,8 @@
+/* ---------------------------------- NOVUMWARE TABS ----------------------------------- */
+[data-nwTabs-group]:not(.NWTabs) {
+	opacity: 0;
+	
+	&:not(.nwTabs-current) {
+		display: none;
+	}
+}

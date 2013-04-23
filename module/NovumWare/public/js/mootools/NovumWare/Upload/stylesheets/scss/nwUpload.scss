@@ -1,0 +1,81 @@
+/* ---------------------------------- NOVUMWARE UPLOADS ----------------------------------- */
+.nwUpload-dropArea {
+/*	border: #121a3f 1px solid;*/
+	border-radius: 3px;
+	background-color: $bgColorInverted;
+	color: $colorInverted;
+	padding: 20px;
+	margin: 10px 0px;
+/*	clear: both;*/
+	text-align: center;
+	@extend .transition;
+	&.nwUpload-dragHover {
+		background-color: fadeout($bgColorInverted, 30%);
+	}
+}
+
+.nwUpload-fileList {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	
+	li {
+		border-bottom: 1px solid $borderColor;
+		
+		.icon-x {
+			margin-left: 10px;
+		}
+	}
+}
+
+.nwUpload-progressBar {
+	width: 50%;
+	height: 15px;
+	background-color: $colorAccent;
+	@extend .border-radius;
+}
+
+
+
+
+.uploadItem {
+	overflow: hidden;
+	border-bottom: #BCBCBC 1px solid;
+	margin: 0 20px;
+	padding: 3px;
+}
+
+.uploadItem span {
+	overflow: hidden;
+	width: 150px;
+	float: left;
+	display: block;
+}
+
+a.addInputRow,
+a.delInputRow,
+.uploadItem a {
+	display: inline-block;
+	background: url("../../novumWare/images/nwUploads/add.png") no-repeat;
+	height: 16px;
+	width: 16px;
+	text-indent: -999px;
+}
+
+.uploadItem a {
+	float: left;
+	display: block;
+	padding-left: 20px;
+	background-image: url("../../novumWare/images/nwUploads/delete.png");
+}
+
+a.delInputRow {
+	background-image: url("../../novumWare/images/nwUploads/delete.png");
+}
+
+.progress {
+	margin: 5px 0;
+	height: 15px;
+	border-radius: 3px;
+	background: #545A74;
+}

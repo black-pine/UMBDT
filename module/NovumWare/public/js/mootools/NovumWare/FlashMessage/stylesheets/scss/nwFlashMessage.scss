@@ -1,0 +1,17 @@
+/* ---------------------------------- NovumWare FLASH MESSAGE ----------------------------------- */
+.nw-flashMessage {
+	position: fixed;
+	left: 50%;
+	top: 30%;
+	margin: -100px 0px 0px -200px;
+//	padding: 20px;
+//	width: 360px;
+//	background-color: $bgColorInverted;
+//	color: $colorInverted;
+//	font-size: 16px;
+//	font-weight: bold;
+	z-index: 6000;
+//	@extend .border-radius;
+//	@extend .box-shadow;
+	@extend .alert;
+}

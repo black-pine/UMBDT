@@ -1,0 +1,40 @@
+/* ---------------------------------- NW HINT ----------------------------------- */
+.NWHint, .NWHint\:hover, .NWHint\:click, .NWHint\:show {
+	position: relative;
+	.nw-hint-content {
+		cursor: default;
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 200px;
+		padding: 5px;
+		text-align: left;
+		background-color: $bgColorBase;
+		border: 1px solid $borderColor;
+		font-style: normal;
+		line-height: normal;
+		@extend .font-normal;
+		@extend .border-radious;
+		@extend .box-shadow;
+		z-index: 4500;
+		
+		&.nw-hint-content-visible {
+			display: block;
+			visibility: visible;
+		}
+		
+		.nw-hint-arrow {
+			display: block;
+			position: absolute;
+			
+			&.icon-arrow-inverted-n {
+				top: -11px;
+				left: 50%;
+				margin-left: -8px;
+			}
+		}
+	}
+}

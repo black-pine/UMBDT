@@ -1,0 +1,20 @@
+// For desktops
+@media (min-width: @widthTablet) {
+	.visible-phone { display: none !important; }
+	.visible-tablet { display: none !important; }
+	.hidden-desktop { display: none !important; }
+}
+
+// Tablets & small desktops only
+@media (min-width: @widthPhone) and (max-width: @widthTablet) {
+  .visible-desktop { display: none !important ; }
+  .visible-phone { display: none !important; }
+  .hidden-tablet { display: none !important; }
+}
+
+// Phones only
+@media (max-width: @widthPhone) {
+  .visible-desktop { display: none !important; }
+  .visible-tablet { display: none !important; }
+  .hidden-phone { display: none !important; }
+}

@@ -1,0 +1,1 @@
+var NWExample=function(){"use strict";return new Class({Implements:[Options],classPlugin:"NWExample",initialize:function(e){},setupContainer:function(e){e.getElements('[class*="'+this.classPlugin+'"]').each(function(e){this.setup(e)}.bind(this))},setup:function(e){console.log(e)},handleClick:function(e,t){}})}();

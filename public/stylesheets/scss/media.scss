@@ -1,0 +1,35 @@
+/* ============================================= MEDIA/VIDEO ====================================== */
+#video-search-criteria {
+	div {
+		display: inline-block;
+
+		label {
+			width: auto;
+			margin-left: 10px;
+		}
+	}
+}
+li ul {
+	margin-left: 20px;
+}
+.photoGalleryNav {
+	float: left;
+	width: 150px;
+	ul {
+		display: none;
+		.collapsibleDir {
+			margin-left: -20px;
+		}
+		a {
+			cursor: pointer;
+		}
+	}
+	> ul {
+		display: block;
+	}
+}
+#photoGallery {
+	float: left;
+	text-align: center;
+	width: 800px;
+}
