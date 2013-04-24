@@ -19,6 +19,16 @@ return array(
 					),
 				),
 			),
+			'gallery' => array(
+				'type'	  => 'Segment',
+				'options' => array(
+					'route' => '/media/media/display-gallery/:gallery',
+					'defaults' => array(
+						'controller' => 'Media\Controller\Media',
+						'action'	 => 'display-gallery',
+					),
+				),
+			),
 		),
 	),
 	

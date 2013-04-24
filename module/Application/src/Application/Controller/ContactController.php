@@ -13,7 +13,7 @@ class ContactController extends AbstractActionController
 
     public function contactUsAction() {
 		// send email from POSTed form
-		if($this->_request->isPost()) {
+		if($this->getRequest()->isPost()) {
 			$formContact = new Application_Form_Contact_ContactUs($this->_request->getPost('formContactUs'));
 			if (!$formContact->drIsValid()) {
 				$this->processFailure(Application_Constants_Errors::FORM_INVALID, NULL, $formContact->getMessages());

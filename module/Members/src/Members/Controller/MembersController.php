@@ -16,7 +16,7 @@ class MembersController extends AbstractActionController
     public function aboutTheTeamAction() {}
     public function newMemberFaqAction() {}
     public function newMemberRegistrationAction() {
-		if ($this->_request->isPost()) {
+		if ($this->getRequest()->isPost()) {
 			$formRegistration = new Application_Form_Join_NewMemberRegistration($this->_request->getPost('formNewMemberRegistration'));
 			if (!$formRegistration->drIsValid()) {
 				$this->processFailure(Application_Constants_Errors::FORM_INVALID, NULL, $formRegistration->getMessages());

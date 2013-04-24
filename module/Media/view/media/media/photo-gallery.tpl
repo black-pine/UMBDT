@@ -9,7 +9,7 @@
 				  </a>
 				  {printNestedDirs dirs=$gallery path="$path$dirName/"}
 			  {else}
-				  <a href='{$siteRoot}/media/display-gallery/?gallery={$path}{$dirName}' class='NWLink:ajax' data-nwLink-respCB='onGalleryResponse'>{$dirName}</a>
+				  <a href='/media/media/display-gallery/{$path}{$dirName}' class='NWLink:ajax' data-nwLink-successCB='onGalleryResponse'>{$dirName}</a>
 			  {/if}
 		  </li>
 	  {/foreach}

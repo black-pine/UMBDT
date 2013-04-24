@@ -19,7 +19,7 @@ var NWAjax = (function(){
 		options: {
 			method: 'get',
 			link: 'ignore',
-			noCache: true,
+			noCache: false,
 			evalScripts: true,
 			onRequest: function(){ $NW.getPlugin('NWLoadingImage').show(); },
 			onError: function(){

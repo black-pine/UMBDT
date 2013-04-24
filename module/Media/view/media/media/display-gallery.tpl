@@ -4,7 +4,7 @@
 	<div class='NWGallery'>
 		<ul class='nwGallery-thumbsList'>
 		{foreach from=$images item='image'}
-			<li><img src='{$dirImages}/galleries/{$galleryName}/{$image}' /></li>
+			<li><img src='/images/galleries/{$galleryName}/{$image}' /></li>
 		{/foreach}
 		</ul>
 	</div>

@@ -8641,7 +8641,6 @@ li ul {
   margin-left: 20px; }
 
 .photoGalleryNav {
-  float: left;
   width: 150px; }
   .photoGalleryNav ul {
     display: none; }
@@ -8653,6 +8652,5 @@ li ul {
     display: block; }
 
 #photoGallery {
-  float: left;
   text-align: center;
   width: 800px; }

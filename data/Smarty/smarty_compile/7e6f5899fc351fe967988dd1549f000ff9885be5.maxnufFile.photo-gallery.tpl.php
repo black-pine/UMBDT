@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2013-04-22 00:36:48
+<?php /* Smarty version Smarty-3.1-DEV, created on 2013-04-24 18:51:20
          compiled from "/Users/Sumi/Sites/UMBDT/module/Media/view/media/media/photo-gallery.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:82286439751746a008d71c4-52006048%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7e6f5899fc351fe967988dd1549f000ff9885be5' => 
     array (
       0 => '/Users/Sumi/Sites/UMBDT/module/Media/view/media/media/photo-gallery.tpl',
-      1 => 1354477159,
+      1 => 1366822278,
       2 => 'maxnufFile',
     ),
   ),
@@ -22,18 +22,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       'compiled' => '',
     ),
   ),
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_51746a00b4cc21_87880299',
   'variables' => 
   array (
     'dirs' => 0,
     'gallery' => 0,
     'dirName' => 0,
-    'siteRoot' => 0,
     'path' => 0,
     'galleries' => 0,
   ),
   'has_nocache_code' => 0,
-  'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_51746a00b4cc21_87880299',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_51746a00b4cc21_87880299')) {function content_51746a00b4cc21_87880299($_smarty_tpl) {?><?php if (!function_exists('smarty_template_function_printNestedDirs')) {
     function smarty_template_function_printNestedDirs($_smarty_tpl,$params) {
@@ -58,10 +57,9 @@ $_smarty_tpl->tpl_vars['gallery']->_loop = true;
 				  <?php smarty_template_function_printNestedDirs($_smarty_tpl,array('dirs'=>$_smarty_tpl->tpl_vars['gallery']->value,'path'=>((string)$_smarty_tpl->tpl_vars['path']->value).((string)$_smarty_tpl->tpl_vars['dirName']->value)."/"));?>
 
 			  <?php }else{ ?>
-				  <a href='<?php echo $_smarty_tpl->tpl_vars['siteRoot']->value;?>
-/media/display-gallery/?gallery=<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
+				  <a href='/media/media/display-gallery/<?php echo $_smarty_tpl->tpl_vars['path']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['dirName']->value;?>
-' class='NWLink:ajax' data-nwLink-respCB='onGalleryResponse'><?php echo $_smarty_tpl->tpl_vars['dirName']->value;?>
+' class='NWLink:ajax' data-nwLink-successCB='onGalleryResponse'><?php echo $_smarty_tpl->tpl_vars['dirName']->value;?>
 </a>
 			  <?php }?>
 		  </li>
@@ -99,4 +97,5 @@ foreach (Smarty::$global_tpl_vars as $key => $value) if(!isset($_smarty_tpl->tpl
 		else targetElmt.getElement('span').removeClass('icon-arrow-s').addClass('icon-arrow-e');
 		event.stopPropagation();
 	});
-</script><?php }} ?>
+</script>
+<?php }} ?>

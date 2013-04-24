@@ -3,19 +3,33 @@ namespace Media\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 
-class MediaController extends AbstractActionController
+class MediaController extends \NovumWare\Zend\Mvc\Controller\AbstractActionController
 {
+    /**
+     * Dispatch a request
+     *
+     * @events dispatch.pre, dispatch.post
+     * @param  Request $request
+     * @param  null|Response $response
+     * @return Response|mixed
+     */
+    public function dispatch(\Zend\Stdlib\RequestInterface $request, \Zend\Stdlib\ResponseInterface $response = null) {
+		define('DOCUMENT_ROOT', '/Users/Sumi/Sites/UMBDT');
+		define('DIR_IMAGES', '/public/images');
+		return parent::dispatch($request, $response);
+	}
+
     public function photoGalleryAction() {
 		$galleriesPath = '/galleries/';
 		$galleriesAbsolutePath = DOCUMENT_ROOT.DIR_IMAGES.$galleriesPath;
 
 		$galleries = $this->createDirArray($galleriesAbsolutePath);
 
-		$this->view->galleries = $galleries;
+		return array('galleries'=>$galleries);
 	}
 
 	public function displayGalleryAction() {
-		$galleryName = $this->_request->getParam('gallery');
+		$galleryName = $this->params('gallery');
 		$galleriesPath = '/galleries/';
 
 		if ($galleryName) {
@@ -26,8 +40,8 @@ class MediaController extends AbstractActionController
 				if ($dirObject == '.' || $dirObject == '..' || $dirObject == '.DS_Store') continue;
 				if (!is_dir($galleryAbsolutePath.$dirObject)) array_push($images, $dirObject);
 			}
-			$this->view->images = $images;
-			$this->view->galleryName = $galleryName;
+			return array('images' => $images,
+						 'galleryName' => $galleryName);
 		}
 
 	}
