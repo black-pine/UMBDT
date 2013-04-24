@@ -8,6 +8,6 @@ class AboutController extends AbstractActionController
 {
     public function aboutUsAction() {}
     public function affiliatesAction() {}
-    public function boardMemberssAction() {}
+    public function boardMembersAction() {}
     public function constitutionAction() {}
 }

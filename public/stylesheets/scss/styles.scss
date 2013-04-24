@@ -108,6 +108,7 @@ nav.nav-main {
 /* ============================================= FOOTER ====================================== */
 footer {
 	position: relative;
+	z-index: 1;
 
 	nav.nav-main {
 		font-size: $fontSizeSmall;

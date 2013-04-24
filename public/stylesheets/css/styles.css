@@ -8618,7 +8618,8 @@ nav.nav-main {
 
 /* ============================================= FOOTER ====================================== */
 footer {
-  position: relative; }
+  position: relative;
+  z-index: 1; }
   footer nav.nav-main {
     font-size: 0.866em; }
     footer nav.nav-main ul {
