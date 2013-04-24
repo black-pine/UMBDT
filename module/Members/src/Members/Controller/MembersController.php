@@ -4,7 +4,7 @@ namespace Members\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 
-class MembersController extends AbstractActionController
+class MembersController extends \NovumWare\Zend\Mvc\Controller\AbstractActionController
 {
 	public function preDispatch() {
 		parent::preDispatch();

@@ -3,7 +3,7 @@ namespace Competitions\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 
-class CompetitionsController extends AbstractActionController
+class CompetitionsController extends \NovumWare\Zend\Mvc\Controller\AbstractActionController
 {
     public function awayCompetitionsAction() {}
     public function competitionFaqAction() {}

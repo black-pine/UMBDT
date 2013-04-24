@@ -3,7 +3,7 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 
-class ContactController extends AbstractActionController
+class ContactController extends \NovumWare\Zend\Mvc\Controller\AbstractActionController
 {
 	public function preDispatch() {
 		parent::preDispatch();
