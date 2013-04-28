@@ -1,1 +1,3 @@
-Dues Payment
+<div id='content'>
+	Dues Payment
+</div>

@@ -1,1 +1,1 @@
-New Member FAQ
+<div id='content'>New Member FAQ</div>

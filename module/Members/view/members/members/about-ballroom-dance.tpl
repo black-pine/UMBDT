@@ -1,1 +1,1 @@
-About Ballroom Dance
+<div id='content'>About Ballroom Dance</div>

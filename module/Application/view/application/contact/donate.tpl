@@ -1,1 +1,1 @@
-Donate
+<div id='content'>Donate</div>

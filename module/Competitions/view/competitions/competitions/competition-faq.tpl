@@ -1,1 +1,1 @@
-Competition FAQ
+<div id='content'>Competition FAQ</div>

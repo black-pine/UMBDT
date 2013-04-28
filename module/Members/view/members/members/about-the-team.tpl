@@ -1,1 +1,1 @@
-About The Team
+<div id='content'>About The Team</div>

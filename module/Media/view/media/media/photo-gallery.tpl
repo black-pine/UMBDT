@@ -1,28 +1,30 @@
-{function printNestedDirs}
-  <ul>
-	  {foreach $dirs as $dirName=>$gallery}
-		  <li>
-			  {if !empty($gallery)}
-				  <a class='collapsibleDir'>
-					  <span class='icon icon-arrow-e'></span>
-					  {$dirName}
-				  </a>
-				  {printNestedDirs dirs=$gallery path="$path$dirName/"}
-			  {else}
-				  <a href='/media/media/display-gallery/{$path}{$dirName}' class='NWLink:ajax' data-nwLink-successCB='onGalleryResponse'>{$dirName}</a>
-			  {/if}
-		  </li>
-	  {/foreach}
-  </ul>
-{/function}
+<div id='content'>
+	{function printNestedDirs}
+	  <ul>
+		  {foreach $dirs as $dirName=>$gallery}
+			  <li>
+				  {if !empty($gallery)}
+					  <a class='collapsibleDir'>
+						  <span class='icon icon-arrow-e'></span>
+						  {$dirName}
+					  </a>
+					  {printNestedDirs dirs=$gallery path="$path$dirName/"}
+				  {else}
+					  <a href='/media/media/display-gallery/{$path}{$dirName}' class='NWLink:ajax' data-nwLink-successCB='onGalleryResponse'>{$dirName}</a>
+				  {/if}
+			  </li>
+		  {/foreach}
+	  </ul>
+	{/function}
 
-<div class='photoGalleryNav'>
-	Galleries:
-	<br />
-	{printNestedDirs dirs = $galleries}
+	<div class='photoGalleryNav'>
+		Galleries:
+		<br />
+		{printNestedDirs dirs = $galleries}
+	</div>
+
+	<div id='photoGallery'></div>
 </div>
-
-<div id='photoGallery'></div>
 
 {literal}<script type='text/javascript'>
 	function onGalleryResponse(data) {
