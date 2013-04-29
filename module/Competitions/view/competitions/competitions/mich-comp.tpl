@@ -1,1 +1,1 @@
-<div id='content'>Mich Comp</div>
+Mich Comp

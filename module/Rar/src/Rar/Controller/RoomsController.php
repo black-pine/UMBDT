@@ -6,6 +6,12 @@ use Zend\Mvc\Controller\AbstractActionController;
 
 class MembersController extends \NovumWare\Zend\Mvc\Controller\AbstractActionController
 {
+	public function preDispatch() {
+		parent::preDispatch();
+		$this->_ajaxContext->addActionContext('new-member-registration', 'json')
+						   ->initContext();
+	}
+
     public function aboutBallroomDanceAction() {}
     public function aboutTheTeamAction() {}
     public function newMemberFaqAction() {}

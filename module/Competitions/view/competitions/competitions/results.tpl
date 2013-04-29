@@ -1,31 +1,28 @@
-<div id='content'>
-	<form id='form-resultsSearchTerms' class='NWForm:ajax' data-nwForm-preDCB='onResultsSearchTermsSubmitted'>
-		<div>
-			<label for='formResultsSearchTerms-comp'>Competition</label>
-			<select id='formResultsSearchTerms-comp' />
-				<option value='ncc'>USA Dance National Collegiate Dancesport Championship</option>
-				<option value='pbc'>Purdue Ballroom Competition</option>
-				<option value='uofm'>University of Michigan Competition</option>
-			</select>
-		</div>
-		<div>
-			<label for='formResultsSearchTerms-year'>Year</label>
-			<select id='formResultsSearchTerms-year' />
-				<option value='12'>2012</option>
-				<option value='11'>2011</option>
-				<option value='10'>2010</option>
-				<option value='09'>2009</option>
-				<option value='08'>2008</option>
-				<option value='07'>2007</option>
-			</select>
-		</div>
-		<div>
-			<input type='submit' value='Submit' />
-		</div>
-	</form>
-
-	<iframe id='resultsIframe' src='' width='700' height='900'></iframe>
-</div>
+<form id='form-resultsSearchTerms' class='NWForm:ajax' data-nwForm-preDCB='onResultsSearchTermsSubmitted'>
+	<div>
+		<label for='formResultsSearchTerms-comp'>Competition</label>
+		<select id='formResultsSearchTerms-comp' />
+			<option value='ncc'>USA Dance National Collegiate Dancesport Championship</option>
+			<option value='pbc'>Purdue Ballroom Competition</option>
+			<option value='uofm'>University of Michigan Competition</option>
+		</select>
+	</div>
+	<div>
+		<label for='formResultsSearchTerms-year'>Year</label>
+		<select id='formResultsSearchTerms-year' />
+			<option value='12'>2012</option>
+			<option value='11'>2011</option>
+			<option value='10'>2010</option>
+			<option value='09'>2009</option>
+			<option value='08'>2008</option>
+			<option value='07'>2007</option>
+		</select>
+	</div>
+	<div>
+		<input type='submit' value='Submit' />
+	</div>
+</form>
+<iframe id='resultsIframe' src='' width='700' height='900'></iframe>
 
 {literal}<script type='text/javascript'>
 	function onResultsSearchTermsSubmitted () {

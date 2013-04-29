@@ -1,1 +1,1 @@
-<div id='content'>Hire Us</div>
+Hire Us

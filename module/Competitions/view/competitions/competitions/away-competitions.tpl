@@ -1,1 +1,1 @@
-<div id='content'>Away Competitions</div>
+Away Competitions

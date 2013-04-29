@@ -1,1 +1,1 @@
-<div id='content'>Affiliates</div>
+Affiliates

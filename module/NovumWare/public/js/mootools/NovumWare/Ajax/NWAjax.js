@@ -35,13 +35,13 @@ var NWAjax = (function(){
 		},
 
 
-		// ======================================================== SETUP METHODS ======================================		
+		// ======================================================== SETUP METHODS ======================================
 		initialize: function(options) {
 			this.setOptions(options); // override default options
 		},
 
 
-		// ======================================================== PUBLIC METHODS ======================================		
+		// ======================================================== PUBLIC METHODS ======================================
 		htmlRequest: function(o, elmt) {
 			this.makeRequest(o, this.typeHtml, elmt);
 		},
@@ -51,7 +51,7 @@ var NWAjax = (function(){
 		},
 		/**
 		 * Make an ajax request for an HTML response.
-		 * 
+		 *
 		 * @param Object o Request options.
 		 * @throws error if no url is provided.
 		 * @return void
@@ -68,7 +68,7 @@ var NWAjax = (function(){
 
 		/**
 		 * Make an ajax request for a JSON response.
-		 * 
+		 *
 		 * @param o Object Request options.
 		 * @throws error if no url is provided.
 		 * @return void
@@ -84,7 +84,7 @@ var NWAjax = (function(){
 
 		/**
 		 * Submit a form via ajax.
-		 * 
+		 *
 		 * @param Object o Request options.
 		 * @throws error if no form is provided.
 		 * @return void

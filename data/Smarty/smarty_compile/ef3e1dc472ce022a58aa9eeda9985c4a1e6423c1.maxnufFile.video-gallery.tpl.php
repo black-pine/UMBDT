@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2013-04-24 05:12:44
+<?php /* Smarty version Smarty-3.1-DEV, created on 2013-04-29 01:14:38
          compiled from "/Users/Sumi/Sites/UMBDT/module/Media/view/media/media/video-gallery.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:50244360351774dac55d7b2-40925034%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ef3e1dc472ce022a58aa9eeda9985c4a1e6423c1' => 
     array (
       0 => '/Users/Sumi/Sites/UMBDT/module/Media/view/media/media/video-gallery.tpl',
-      1 => 1354138020,
+      1 => 1367173159,
       2 => 'maxnufFile',
     ),
   ),
@@ -15,93 +15,94 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1-DEV',
   'unifunc' => 'content_51774dac5d90e5_44959559',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51774dac5d90e5_44959559')) {function content_51774dac5d90e5_44959559($_smarty_tpl) {?><div id='video-search-criteria'>
-	<form id='form-videoSearchTerms' class='NWForm:ajax' data-nwForm-preDCB='onVideoSearchTermsSubmitted' data-nwForm-postDCB='onVideoSearchReturned' method='GET'>
-		<div>
-			<label for='formVideoSearchTerms-year'>Year</label>
-			<select id='formVideoSearchTerms-year' />
-				<option value=''>All</option>
-				<option value='2011'>2011</option>
-				<option value='2010'>2010</option>
-				<option value='2009'>2009</option>
-				<option value='2008'>2008</option>
-				<option value='2007'>2007</option>
-			</select>
-		</div>
-		<div>
-			<label for='formVideoSearchTerms-event'>Event</label>
-			<select id='formVideoSearchTerms-event' />
-				<option value=''>All</option>
-				<option value='Competiton'>Competiton</option>
-				<option value='Showcase'>Showcase</option>
-				<option value='SocialEvent'>Social Event</option>
-				<option value='Tryouts'>Tryouts</option>
-			</select>
-		</div>
-		<div>
-			<label for='formVideoSearchTerms-location'>Location</label>
-			<select id='formVideoSearchTerms-location'/>
-				<option value=''>All</option>
-				<option value='Purdue'>Purdue</option>
-				<option value='OSB'>OSB</option>
-				<option value='Arnold'>Arnold</option>
-				<option value='Michigan'>Michigan</option>
-				<option value='Northwestern'>Northwestern</option>
-				<option value='NotreDame'>Notre Dame</option>
-			</select>
-		</div>
-		<div>
-			<label for='formVideoSearchTerms-level'>Level</label>
-			<select id='formVideoSearchTerms-level' />
-				<option value=''>All</option>
-				<option value='Newcomer'>Newcomer</option>
-				<option value='Bronze'>Bronze</option>
-				<option value='Silver'>Silver</option>
-				<option value='Gold'>Gold</option>
-				<option value='Novice'>Novice</option>
-				<option value='PreChamp'>Pre Champ</option>
-				<option value='Champ'>Champ</option>
-			</select>
-		</div>
-		<div>
-			<label for='formVideoSearchTerms-style'>Style</label>
-			<select id='formVideoSearchTerms-style' />
-				<option value=''>All</option>
-				<option value='AmWaltz'>Am - Waltz</option>
-				<option value='AmFoxtrot'>Am - Foxtrot</option>
-				<option value='AmTango'>Am - Tango</option>
-				<option value='VietWaltz'>Viet - Waltz</option>
-				<option value='AmRumba'>Am - Rumba</option>
-				<option value='AmChacha'>Am - Chacha</option>
-				<option value='Swing'>Swing</option>
-				<option value='IntWaltz'>Int - Waltz</option>
-				<option value='IntFoxtrot'>Int - Foxtrot</option>
-				<option value='IntTango'>Int - Tango</option>
-				<option value='IntRumba'>Int - Rumba</option>
-				<option value='IntChacha'>Int - Chacha</option>
-				<option value='Samba'>Samba</option>
-				<option value='Jive'>Jive</option>
-				<option value='PasoDoble'>Paso Doble</option>
-			</select>
-		</div>
-		<br />
-		<div>
-			<input type='submit' value='Search' />
-		</div>
-	</form>
+<?php if ($_valid && !is_callable('content_51774dac5d90e5_44959559')) {function content_51774dac5d90e5_44959559($_smarty_tpl) {?><div id='content'>
+	<div id='video-search-criteria'>
+		<form id='form-videoSearchTerms' class='NWForm:ajax' data-nwForm-preDCB='onVideoSearchTermsSubmitted' data-nwForm-postDCB='onVideoSearchReturned' method='GET'>
+			<div>
+				<label for='formVideoSearchTerms-year'>Year</label>
+				<select id='formVideoSearchTerms-year' />
+					<option value=''>All</option>
+					<option value='2011'>2011</option>
+					<option value='2010'>2010</option>
+					<option value='2009'>2009</option>
+					<option value='2008'>2008</option>
+					<option value='2007'>2007</option>
+				</select>
+			</div>
+			<div>
+				<label for='formVideoSearchTerms-event'>Event</label>
+				<select id='formVideoSearchTerms-event' />
+					<option value=''>All</option>
+					<option value='Competiton'>Competiton</option>
+					<option value='Showcase'>Showcase</option>
+					<option value='SocialEvent'>Social Event</option>
+					<option value='Tryouts'>Tryouts</option>
+				</select>
+			</div>
+			<div>
+				<label for='formVideoSearchTerms-location'>Location</label>
+				<select id='formVideoSearchTerms-location'/>
+					<option value=''>All</option>
+					<option value='Purdue'>Purdue</option>
+					<option value='OSB'>OSB</option>
+					<option value='Arnold'>Arnold</option>
+					<option value='Michigan'>Michigan</option>
+					<option value='Northwestern'>Northwestern</option>
+					<option value='NotreDame'>Notre Dame</option>
+				</select>
+			</div>
+			<div>
+				<label for='formVideoSearchTerms-level'>Level</label>
+				<select id='formVideoSearchTerms-level' />
+					<option value=''>All</option>
+					<option value='Newcomer'>Newcomer</option>
+					<option value='Bronze'>Bronze</option>
+					<option value='Silver'>Silver</option>
+					<option value='Gold'>Gold</option>
+					<option value='Novice'>Novice</option>
+					<option value='PreChamp'>Pre Champ</option>
+					<option value='Champ'>Champ</option>
+				</select>
+			</div>
+			<div>
+				<label for='formVideoSearchTerms-style'>Style</label>
+				<select id='formVideoSearchTerms-style' />
+					<option value=''>All</option>
+					<option value='AmWaltz'>Am - Waltz</option>
+					<option value='AmFoxtrot'>Am - Foxtrot</option>
+					<option value='AmTango'>Am - Tango</option>
+					<option value='VietWaltz'>Viet - Waltz</option>
+					<option value='AmRumba'>Am - Rumba</option>
+					<option value='AmChacha'>Am - Chacha</option>
+					<option value='Swing'>Swing</option>
+					<option value='IntWaltz'>Int - Waltz</option>
+					<option value='IntFoxtrot'>Int - Foxtrot</option>
+					<option value='IntTango'>Int - Tango</option>
+					<option value='IntRumba'>Int - Rumba</option>
+					<option value='IntChacha'>Int - Chacha</option>
+					<option value='Samba'>Samba</option>
+					<option value='Jive'>Jive</option>
+					<option value='PasoDoble'>Paso Doble</option>
+				</select>
+			</div>
+			<br />
+			<div>
+				<input type='submit' value='Search' />
+			</div>
+		</form>
+	</div>
+
+	<div class='spacer-large'></div>
+
+	<div class='videoGallery'>
+		<ul class='videoThumbs'>
+		</ul>
+	</div>
 </div>
-
-<div class='spacer-large'></div>
-
-<div class='videoGallery'>
-	<ul class='videoThumbs'>
-	</ul>
-</div>
-
 
 <script type='text/javascript'>
 	function onVideoSearchTermsSubmitted () {

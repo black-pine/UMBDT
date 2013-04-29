@@ -8,6 +8,7 @@ return array(
 		'Competitions',
 		'Members',
 		'Media',
+		'Rar',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
