@@ -50,7 +50,12 @@
 				<li><a href='/contact/donate' class='NWLink:ajax' data-nwAjax-containerTargetID='content-wrapper'>Donate</a></li>
 			</ul>
 		</li>
-
+		<li>
+			<a href="#">Ra[w]R</a>
+			<ul>
+				<li><a href='/rar/people/new' class='NWLink:ajax' data-nwAjax-containerTargetID='content-wrapper'>Form</a></li>
+			</ul>
+		</li>
 
 	</ul>
 </nav>

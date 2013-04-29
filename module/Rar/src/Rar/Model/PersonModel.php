@@ -7,8 +7,8 @@ class PersonModel extends \NovumWare\Model\AbstractModel
 	public $name;
 	public $email;
 	public $phone;
-	public $departure;
-	public $driver;
+	public $departureTime;
+	public $driver = 0;
 	public $capacity;
 	public $preference1;
 	public $preference2;

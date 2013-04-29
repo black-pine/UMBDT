@@ -43,7 +43,8 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+            'translator'			  => 'Zend\I18n\Translator\TranslatorServiceFactory',
+			'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
     ),
     'translator' => array(
@@ -58,9 +59,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController',
-			'Application\Controller\About' => 'Application\Controller\AboutController',
-			'Application\Controller\Home' => 'Application\Controller\HomeController',
+            'Application\Controller\Index'	 => 'Application\Controller\IndexController',
+			'Application\Controller\About'	 => 'Application\Controller\AboutController',
+			'Application\Controller\Home'	 => 'Application\Controller\HomeController',
             'Application\Controller\Contact' => 'Application\Controller\ContactController'
         ),
     ),

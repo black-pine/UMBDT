@@ -1,6 +1,6 @@
 <fieldset>
 	<legend>New Person</legend>
-	<form href='/rar/people/new'>
+	<form action='/rar/people/new' method='post'>
 		<div>
 			<label>Name</label>
 			<input type='text' name='newPersonForm[name]' />
@@ -15,11 +15,11 @@
 		</div>
 		<div>
 			<label>When can you leave?</label>
-			<input type='text' name='newPersonForm[departure]' />
+			<input type='text' name='newPersonForm[departureTime]' />
 		</div>
 		<div>
 			<label class='checkbox'>
-				<input type='checkbox' name='newPersonForm[driver]' value='1' />
+				<input type='checkbox' name='newPersonForm[driver]' />
 				I have a car I can drive
 			</label>
 		</div>

@@ -5,6 +5,7 @@ use Zend\Form\Element;
 use Zend\InputFilter\Input;
 use Zend\InputFilter\InputFilter;
 use Zend\Validator;
+use Zend\Filter;
 
 class PersonForm extends \NovumWare\Zend\Form\Form
 {
@@ -18,9 +19,11 @@ class PersonForm extends \NovumWare\Zend\Form\Form
 
 		$phone = new Element\Text('phone');
 
-		$departure = new Element\Text('departure');
+		$departureTime = new Element\Text('departureTime');
 
 		$driver = new Element\Checkbox('driver');
+		$driver->setUncheckedValue('no')
+			   ->setCheckedValue(true);
 
 		$capacity = new Element\Text('capacity');
 
@@ -35,7 +38,7 @@ class PersonForm extends \NovumWare\Zend\Form\Form
 		$this->add($name)
 			 ->add($email)
 			 ->add($phone)
-			 ->add($departure)
+			 ->add($departureTime)
 			 ->add($driver)
 			 ->add($capacity)
 			 ->add($preference1)
@@ -56,41 +59,42 @@ class PersonForm extends \NovumWare\Zend\Form\Form
 			$email = new Input('email');
 			$email->setRequired(true)
 				  ->getValidatorChain()
-				  ->addValidator(new Validator\EmailAddress());
+				  ->addValidator(new Validator\EmailAddress);
 
-			$phone = new Element\Text('phone');
+			$phone = new Input('phone');
 			$phone->setRequired(true)
 				  ->getFilterChain()
-				  ->addFilter(new Filter\Int);
+				  ->attach(new Filter\Int);
 
-			$departure = new Element\Text('departure');
-			$departure->setRequired(true);
+			$departureTime = new Input('departureTime');
+			$departureTime->setRequired(true);
 
-			$driver = new Element\Checkbox('driver');
-			$driver->setRequired(true);
+			$driver = new Input('driver');
+			$driver->setRequired(false);
 
-			$capacity = new Element\Text('capacity');
+			$capacity = new Input('capacity');
+			$capacity->setAllowEmpty(true);
 
-			$preference1 = new Element\Text('preference1');
+			$preference1 = new Input('preference1');
 
-			$preference2 = new Element\Text('preference2');
+			$preference2 = new Input('preference2');
 
-			$antipreference1 = new Element\Text('antipreference1');
+			$antipreference1 = new Input('antipreference1');
 
-			$antipreference2 = new Element\Text('antipreference2');
+			$antipreference2 = new Input('antipreference2');
 
 
 			$inputFilter = new InputFilter();
 			$inputFilter->add($name)
 						->add($email)
 						->add($phone)
-						->add($departure)
+						->add($departureTime)
 						->add($driver)
-						->add($capacity)
-						->add($preference1)
-						->add($preference2)
-						->add($antipreference1)
-						->add($antipreference2);
+						->add($capacity);
+//						->add($preference1)
+//						->add($preference2)
+//						->add($antipreference1)
+//						->add($antipreference2);
 
 			$this->inputFilter = $inputFilter;
 		}

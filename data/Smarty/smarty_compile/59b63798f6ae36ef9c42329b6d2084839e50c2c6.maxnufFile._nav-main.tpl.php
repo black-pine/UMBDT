@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2013-04-29 01:14:26
+<?php /* Smarty version Smarty-3.1-DEV, created on 2013-04-29 21:32:07
          compiled from "/Users/Sumi/Sites/UMBDT/module/Application/view/layout/partials/_nav-main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:53745824751747143bf00e0-95473543%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '59b63798f6ae36ef9c42329b6d2084839e50c2c6' => 
     array (
       0 => '/Users/Sumi/Sites/UMBDT/module/Application/view/layout/partials/_nav-main.tpl',
-      1 => 1367190849,
+      1 => 1367263924,
       2 => 'maxnufFile',
     ),
   ),
@@ -71,7 +71,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<li><a href='/contact/donate' class='NWLink:ajax' data-nwAjax-containerTargetID='content-wrapper'>Donate</a></li>
 			</ul>
 		</li>
-
+		<li>
+			<a href="#">Ra[w]R</a>
+			<ul>
+				<li><a href='/rar/people/new' class='NWLink:ajax' data-nwAjax-containerTargetID='content-wrapper'>Form</a></li>
+			</ul>
+		</li>
 
 	</ul>
 </nav>
