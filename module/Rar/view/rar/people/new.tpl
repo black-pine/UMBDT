@@ -3,7 +3,7 @@
 	<form action='/rar/people/new' method='post' class='NWForm' >
 		<div>
 			<label>Name</label>
-			<input type='text' name='newPersonForm[name]' data-validators='required' />
+			<input type='text' name='newPersonForm[name]' data-validators='required' onblur='checkName(this.value)' />
 		</div>
 		<div>
 			<label>E-mail</label>
@@ -48,3 +48,15 @@
 		</div>
 	</form>
 </fieldset>
+
+{literal}
+	<script type='text/javascript'>
+		function checkName(name) {
+			var o = {
+				'url' : '/rar/people/check-name-input',
+				'data' : {'name' : name}
+			};
+			$NW.getPlugin('NWAjax').jsonRequest(o);
+		}
+	</script>
+{/literal}

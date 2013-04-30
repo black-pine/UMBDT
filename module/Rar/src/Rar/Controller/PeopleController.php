@@ -20,6 +20,10 @@ class PeopleController extends \NovumWare\Zend\Mvc\Controller\AbstractActionCont
 		return $this->redirect()->toRoute('home');
 	}
 
+	public function checkNameInputAction() {
+		return array('nameTaken' => false);
+	}
+
 
 	// ========================================================================= FACTORY METHODS =========================================================================
 	/**
