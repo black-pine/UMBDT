@@ -1,31 +1,31 @@
 <fieldset>
 	<legend>New Person</legend>
-	<form action='/rar/people/new' method='post'>
+	<form action='/rar/people/new' method='post' class='NWForm' >
 		<div>
 			<label>Name</label>
-			<input type='text' name='newPersonForm[name]' />
+			<input type='text' name='newPersonForm[name]' data-validators='required' />
 		</div>
 		<div>
 			<label>E-mail</label>
-			<input type='email' name='newPersonForm[email]' />
+			<input type='email' name='newPersonForm[email]' data-validators='required validate-email' />
 		</div>
 		<div>
 			<label>Phone Number</label>
-			<input type='text' name='newPersonForm[phone]' />
+			<input type='text' name='newPersonForm[phone]' data-validators='required' />
 		</div>
 		<div>
 			<label>When can you leave?</label>
-			<input type='text' name='newPersonForm[departureTime]' />
+			<input type='text' name='newPersonForm[departureTime]' data-validators='required' />
 		</div>
 		<div>
 			<label class='checkbox'>
-				<input type='checkbox' name='newPersonForm[driver]' />
+				<input type='checkbox' name='newPersonForm[driver]' class="validate-toggle-oncheck toToggle:['newPersonForm-capacity']" />
 				I have a car I can drive
 			</label>
 		</div>
 		<div>
 			<label>How many people (including yourself) can you fit in your car?</label>
-			<input type='text' name='newPersonForm[capacity]' />
+			<input type='text' name='newPersonForm[capacity]' id='newPersonForm-capacity' />
 		</div>
 		<div>
 			<label>Preference 1</label>

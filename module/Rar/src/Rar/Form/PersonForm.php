@@ -69,32 +69,17 @@ class PersonForm extends \NovumWare\Zend\Form\Form
 			$departureTime = new Input('departureTime');
 			$departureTime->setRequired(true);
 
-			$driver = new Input('driver');
-			$driver->setRequired(false);
-
 			$capacity = new Input('capacity');
-			$capacity->setAllowEmpty(true);
-
-			$preference1 = new Input('preference1');
-
-			$preference2 = new Input('preference2');
-
-			$antipreference1 = new Input('antipreference1');
-
-			$antipreference2 = new Input('antipreference2');
-
+			$capacity->setAllowEmpty(true)
+					 ->getFilterChain()
+					 ->attach(new Filter\Int);
 
 			$inputFilter = new InputFilter();
 			$inputFilter->add($name)
 						->add($email)
 						->add($phone)
 						->add($departureTime)
-						->add($driver)
 						->add($capacity);
-//						->add($preference1)
-//						->add($preference2)
-//						->add($antipreference1)
-//						->add($antipreference2);
 
 			$this->inputFilter = $inputFilter;
 		}
