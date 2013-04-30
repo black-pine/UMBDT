@@ -14,11 +14,10 @@ class PeopleController extends \NovumWare\Zend\Mvc\Controller\AbstractActionCont
 		if (!$personForm->isValid()) {  $this->nwFlashMessenger()->addErrorMessage(MessageConstants::ERROR_INVALID_FORM);  return; }
 
 		$peopleMapper = $this->getPeopleMapper();
-		var_dump(new PersonModel($personForm->getData()));
 		$peopleMapper->insertModel(new PersonModel($personForm->getData()));
 
 		$this->nwFlashMessenger()->addSuccessMessage('You successfully submitted the form.');
-		$this->redirect()->toRoute('home');
+		return $this->redirect()->toRoute('home');
 	}
 
 
