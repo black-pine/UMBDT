@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2013-05-02 17:13:59
+<?php /* Smarty version Smarty-3.1-DEV, created on 2013-05-02 21:32:31
          compiled from "/Users/Sumi/Sites/UMBDT/module/Rar/view/rar/people/new.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1084818998517dae98e6d562-46392585%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3d2aba45ee2c3e32ffb386919bf7b385dfab6b8e' => 
     array (
       0 => '/Users/Sumi/Sites/UMBDT/module/Rar/view/rar/people/new.tpl',
-      1 => 1367507550,
+      1 => 1367521229,
       2 => 'maxnufFile',
     ),
   ),
@@ -36,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 		<div>
 			<label>When can you leave?</label>
-			<input type='text' name='newPersonForm[departureTime]' data-validators='required' />
+			<input type='text' name='newPersonForm[departureTime]' class='NWDatePicker' data-validators='required' data-nwDatePicker-options='{timePicker:true, format:"%A %B %e, %Y %H:%M"}' />
 		</div>
 		<div>
 			<label class='checkbox'>

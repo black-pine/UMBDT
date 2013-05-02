@@ -67,7 +67,9 @@ class PersonForm extends \NovumWare\Zend\Form\Form
 				  ->attach(new Filter\Int);
 
 			$departureTime = new Input('departureTime');
-			$departureTime->setRequired(true);
+			$departureTime->setRequired(true)
+						  ->getFilterChain()
+						  ->attach(function($dateString) { return strtotime($dateString); });
 
 			$capacity = new Input('capacity');
 			$capacity->setAllowEmpty(true)

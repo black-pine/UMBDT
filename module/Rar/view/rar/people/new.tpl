@@ -15,7 +15,7 @@
 		</div>
 		<div>
 			<label>When can you leave?</label>
-			<input type='text' name='newPersonForm[departureTime]' data-validators='required' />
+			<input type='text' name='newPersonForm[departureTime]' class='NWDatePicker' data-validators='required' data-nwDatePicker-options={literal}'{timePicker:true, format:"%A %B %e, %Y %H:%M"}'{/literal} />
 		</div>
 		<div>
 			<label class='checkbox'>
