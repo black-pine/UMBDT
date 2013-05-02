@@ -21,6 +21,36 @@ return array(
 					),
 				),
 			),
+			'rarCheckName' => array(
+				'type'	  => 'Segment',
+				'options' => array(
+					'route' => '/rar/people/check-name-taken/:name',
+					'defaults' => array(
+						'controller' => 'Rar\Controller\People',
+						'action'	 => 'check-name-taken',
+					),
+				),
+			),
+			'rarCheckEmail' => array(
+				'type'	  => 'Segment',
+				'options' => array(
+					'route' => '/rar/people/check-email-taken/:email',
+					'defaults' => array(
+						'controller' => 'Rar\Controller\People',
+						'action'	 => 'check-email-taken',
+					),
+				),
+			),
+			'rarCheckPhone' => array(
+				'type'	  => 'Segment',
+				'options' => array(
+					'route' => '/rar/people/check-phone-taken/:phone',
+					'defaults' => array(
+						'controller' => 'Rar\Controller\People',
+						'action'	 => 'check-phone-taken',
+					),
+				),
+			),
 		),
 	),
 	

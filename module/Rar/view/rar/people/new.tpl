@@ -3,15 +3,15 @@
 	<form action='/rar/people/new' method='post' class='NWForm' >
 		<div>
 			<label>Name</label>
-			<input type='text' name='newPersonForm[name]' data-validators='required' onblur='checkName(this.value)' />
+			<input type='text' name='newPersonForm[name]' data-validators='required nwNameIsUnique' data-nwNameIsUnique-url='/rar/people/check-name-taken' />
 		</div>
 		<div>
 			<label>E-mail</label>
-			<input type='email' name='newPersonForm[email]' data-validators='required validate-email' />
+			<input type='email' name='newPersonForm[email]' data-validators='required  validate-email nwEmailIsUnique' data-nwEmailIsUnique-url='/rar/people/check-email-taken' />
 		</div>
 		<div>
 			<label>Phone Number</label>
-			<input type='text' name='newPersonForm[phone]' data-validators='required' />
+			<input type='text' name='newPersonForm[phone]' data-validators='required nwPhoneIsUnique' data-nwPhoneIsUnique-url='/rar/people/check-phone-taken' />
 		</div>
 		<div>
 			<label>When can you leave?</label>
@@ -48,15 +48,3 @@
 		</div>
 	</form>
 </fieldset>
-
-{literal}
-	<script type='text/javascript'>
-		function checkName(name) {
-			var o = {
-				'url' : '/rar/people/check-name-input',
-				'data' : {'name' : name}
-			};
-			$NW.getPlugin('NWAjax').jsonRequest(o);
-		}
-	</script>
-{/literal}

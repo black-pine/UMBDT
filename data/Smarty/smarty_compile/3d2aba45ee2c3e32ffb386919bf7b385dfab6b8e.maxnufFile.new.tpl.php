@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2013-05-01 00:03:11
+<?php /* Smarty version Smarty-3.1-DEV, created on 2013-05-02 17:13:59
          compiled from "/Users/Sumi/Sites/UMBDT/module/Rar/view/rar/people/new.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1084818998517dae98e6d562-46392585%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3d2aba45ee2c3e32ffb386919bf7b385dfab6b8e' => 
     array (
       0 => '/Users/Sumi/Sites/UMBDT/module/Rar/view/rar/people/new.tpl',
-      1 => 1367359389,
+      1 => 1367507550,
       2 => 'maxnufFile',
     ),
   ),
@@ -24,15 +24,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<form action='/rar/people/new' method='post' class='NWForm' >
 		<div>
 			<label>Name</label>
-			<input type='text' name='newPersonForm[name]' data-validators='required' onblur='checkName(this.value)' />
+			<input type='text' name='newPersonForm[name]' data-validators='required nwNameIsUnique' data-nwNameIsUnique-url='/rar/people/check-name-taken' />
 		</div>
 		<div>
 			<label>E-mail</label>
-			<input type='email' name='newPersonForm[email]' data-validators='required validate-email' />
+			<input type='email' name='newPersonForm[email]' data-validators='required  validate-email nwEmailIsUnique' data-nwEmailIsUnique-url='/rar/people/check-email-taken' />
 		</div>
 		<div>
 			<label>Phone Number</label>
-			<input type='text' name='newPersonForm[phone]' data-validators='required' />
+			<input type='text' name='newPersonForm[phone]' data-validators='required nwPhoneIsUnique' data-nwPhoneIsUnique-url='/rar/people/check-phone-taken' />
 		</div>
 		<div>
 			<label>When can you leave?</label>
@@ -68,16 +68,4 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<button type='submit'>Submit</button>
 		</div>
 	</form>
-</fieldset>
-
-
-	<script type='text/javascript'>
-		function checkName(name) {
-			var o = {
-				'url' : '/rar/people/check-name-input',
-				'data' : {'name' : name}
-			};
-			$NW.getPlugin('NWAjax').jsonRequest(o);
-		}
-	</script>
-<?php }} ?>
+</fieldset><?php }} ?>

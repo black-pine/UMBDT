@@ -11,7 +11,7 @@ class PeopleController extends \NovumWare\Zend\Mvc\Controller\AbstractActionCont
     public function newAction() {
 		if (!$this->getRequest()->isPost()) return;
 		$personForm = new PersonForm($this->getRequest()->getPost('newPersonForm'));
-		if (!$personForm->isValid()) {  $this->nwFlashMessenger()->addErrorMessage(MessageConstants::ERROR_INVALID_FORM);  return; }
+		if (!$personForm->isValid()) { $this->nwFlashMessenger()->addErrorMessage(MessageConstants::ERROR_INVALID_FORM);  return; }
 
 		$peopleMapper = $this->getPeopleMapper();
 		$peopleMapper->insertModel(new PersonModel($personForm->getData()));
@@ -20,8 +20,25 @@ class PeopleController extends \NovumWare\Zend\Mvc\Controller\AbstractActionCont
 		return $this->redirect()->toRoute('home');
 	}
 
-	public function checkNameInputAction() {
-		return array('nameTaken' => false);
+	public function checkNameTakenAction() {
+		$name = $this->params('name');
+		if (!$name) { $this->nwFlashMessenger()->addErrorMessage(MessageConstants::ERROR_MISSING_INFO);  return; }
+		$peopleMapper = $this->getPeopleMapper();
+		return array('nameTaken' => (bool) $peopleMapper->fetchOneWhere(array('person_name = ?' => $name)));
+	}
+
+	public function checkEmailTakenAction() {
+		$email = $this->params('email');
+		if (!$email) { $this->nwFlashMessenger()->addErrorMessage(MessageConstants::ERROR_MISSING_INFO);  return; }
+		$peopleMapper = $this->getPeopleMapper();
+		return array('emailTaken' => (bool) $peopleMapper->fetchOneWhere(array('person_email = ?' => $email)));
+	}
+
+		public function checkPhoneTakenAction() {
+		$phone = $this->params('phone');
+		if (!$phone) { $this->nwFlashMessenger()->addErrorMessage(MessageConstants::ERROR_MISSING_INFO);  return; }
+		$peopleMapper = $this->getPeopleMapper();
+		return array('phoneTaken' => (bool) $peopleMapper->fetchOneWhere(array('person_phone = ?' => $phone)));
 	}
 
 
