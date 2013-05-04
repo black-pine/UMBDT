@@ -7,7 +7,7 @@ return array(
 			'Rar\Controller\Rooms' => 'Rar\Controller\RoomsController',
 		),
 	),
-	
+
 	'router' => array(
 		'routes' => array(
 			'rar' => array(
@@ -17,7 +17,7 @@ return array(
 					'defaults' => array(
 						'__NAMESPACE__' => 'Rar\Controller',
 						'controller' => 'People',
-						'action'	 => 'new',
+						'action'	 => 'index',
 					),
 				),
 			),
@@ -53,10 +53,16 @@ return array(
 			),
 		),
 	),
-	
+
 	'view_manager' => array(
 		'template_path_stack' => array(
 			__DIR__ . '/../view',
+		),
+	),
+
+	'maxnufsmarty' => array(
+		'plugins' => array(
+			__DIR__ . '/../src/Smarty/plugins',
 		),
 	),
 );

@@ -10,6 +10,19 @@ class PeopleMapper extends \NovumWare\Db\Table\Mapper\AbstractMapper
 
 
 	// ========================================================================= CONVENIENCE METHODS =========================================================================
+	/**
+	 * @return array of \Rar\Model\PersonModel
+	 */
+	public function fetchDrivers() {
+		return $this->fetchManyWhere(array('person_driver = ?' => true));
+	}
+
+	/**
+	 * @return array of \Rar\Model\PersonModel
+	 */
+	public function fetchRiders() {
+		return $this->fetchManyWhere(array('person_driver = ?' => false));
+	}
 
 
 	// ========================================================================= OVERRIDES =========================================================================

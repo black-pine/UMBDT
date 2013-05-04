@@ -1,30 +1,26 @@
 <?php
 
-namespace Members\Controller;
+namespace Rar\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
-
-class MembersController extends \NovumWare\Zend\Mvc\Controller\AbstractActionController
+class RidesController extends \NovumWare\Zend\Mvc\Controller\AbstractActionController
 {
-	public function preDispatch() {
-		parent::preDispatch();
-		$this->_ajaxContext->addActionContext('new-member-registration', 'json')
-						   ->initContext();
+    public function indexAction() {
+		$peopleMapper = $this->getPeopleMapper();
+		$driverModelsArray = $peopleMapper->fetchDrivers();
+		$riderModelsArray = $peopleMapper->fetchRiders();
+		return array(
+			'driversArray' => $driverModelsArray,
+			'ridersArray' => $riderModelsArray
+		);
 	}
 
-    public function aboutBallroomDanceAction() {}
-    public function aboutTheTeamAction() {}
-    public function newMemberFaqAction() {}
-    public function newMemberRegistrationAction() {
-		if ($this->getRequest()->isPost()) {
-			$formRegistration = new Application_Form_Join_NewMemberRegistration($this->_request->getPost('formNewMemberRegistration'));
-			if (!$formRegistration->drIsValid()) {
-				$this->processFailure(Application_Constants_Errors::FORM_INVALID, NULL, $formRegistration->getMessages());
-				return;
-			}
-			$newMemberRegistrationModel = new Application_Model_NewMemberRegistration($formRegistration->getValues());
-			Application_Model_DbTable_NewMemberRegistration::insertModel($newMemberRegistrationModel);
-			$this->view->success = true;
-		}
+
+	// ========================================================================= FACTORY METHODS =========================================================================
+	/**
+	 * @return \Rar\Mapper\PeopleMapper
+	 */
+	protected function getPeopleMapper() {
+		if (!isset($this->peopleMapper)) $this->peopleMapper = $this->getServiceLocator()->get('\Rar\Mapper\PeopleMapper');
+		return $this->peopleMapper;
 	}
 }
