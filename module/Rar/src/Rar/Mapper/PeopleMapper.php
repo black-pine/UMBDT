@@ -21,7 +21,19 @@ class PeopleMapper extends \NovumWare\Db\Table\Mapper\AbstractMapper
 	 * @return array of \Rar\Model\PersonModel
 	 */
 	public function fetchRiders() {
-		return $this->fetchManyWhere(array('person_driver = ?' => false));
+		return $this->fetchManyWhere(array('person_driver = ?' => false, 'person_driver_person_id is ?' => null));
+	}
+
+	/**
+	 * @return array of \Rar\Model\PersonModel
+	 */
+	public function fetchRidersWithDriver() {
+		$driversArray = $this->fetchDrivers();
+		$driversRidersArray = [];
+		foreach ($driversArray as $driverKey => $driverModel) {
+			$driversRidersArray[$driverKey] = $this->fetchManyWhere(array('person_driver_person_id = ?' => $driverModel->id));
+		}
+		return $driversRidersArray;
 	}
 
 
@@ -47,5 +59,20 @@ class PeopleMapper extends \NovumWare\Db\Table\Mapper\AbstractMapper
 		$modelsArray = parent::fetchManyWithSelect($select);
 		foreach ($modelsArray as $personModel) $personModel->departureTime = strtotime($personModel->departureTime);
 		return $modelsArray;
+	}
+
+	/**
+	 * Update the DB using a Model
+	 *
+	 * @param \NovumWare\Model\AbstractModel $model
+	 * @param array $where
+	 * @return void
+	 * @throws \Exception if $where is empty
+	 */
+	public function updateModel(\NovumWare\Model\AbstractModel $model) {
+		$intTime = $model->departureTime;
+		$model->departureTime = date('Y-m-d H:i:s', $intTime);
+		parent::updateModel($model);
+		$model->departureTime = $intTime;
 	}
 }

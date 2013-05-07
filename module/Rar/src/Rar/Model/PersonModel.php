@@ -14,4 +14,5 @@ class PersonModel extends \NovumWare\Model\AbstractModel
 	public $preference2;
 	public $antipreference1;
 	public $antipreference2;
+	public $driver_person_id;
 }
