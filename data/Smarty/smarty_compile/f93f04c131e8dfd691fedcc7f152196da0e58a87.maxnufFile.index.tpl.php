@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2013-05-07 19:38:40
+<?php /* Smarty version Smarty-3.1-DEV, created on 2013-05-08 19:58:10
          compiled from "/Users/Sumi/Sites/UMBDT/module/Rar/view/rar/rides/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20258042925182d27d081532-53206242%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f93f04c131e8dfd691fedcc7f152196da0e58a87' => 
     array (
       0 => '/Users/Sumi/Sites/UMBDT/module/Rar/view/rar/rides/index.tpl',
-      1 => 1367948313,
+      1 => 1368035888,
       2 => 'maxnufFile',
     ),
   ),
@@ -38,10 +38,11 @@ $_smarty_tpl->tpl_vars['driver']->_loop = true;
  $_smarty_tpl->tpl_vars['keyNumber']->value = $_smarty_tpl->tpl_vars['driver']->key;
 ?>
 		<li data-driverId='<?php echo $_smarty_tpl->tpl_vars['driver']->value['id'];?>
+' data-driverCapacity='<?php echo $_smarty_tpl->tpl_vars['driver']->value['capacity'];?>
 '><?php echo $_smarty_tpl->tpl_vars['driver']->value['name'];?>
  - <?php echo smarty_modifier_rarFormatDate($_smarty_tpl->tpl_vars['driver']->value['departureTime']);?>
- ( <?php echo $_smarty_tpl->tpl_vars['driver']->value['capacity'];?>
- )
+ &emsp;&emsp;&emsp; Seats Remaining: <span><?php echo $_smarty_tpl->tpl_vars['driver']->value['capacity']-count($_smarty_tpl->tpl_vars['ridersWithDriverArray']->value[$_smarty_tpl->tpl_vars['keyNumber']->value])-1;?>
+</span>
 			<ul class='seats'>
 				<?php  $_smarty_tpl->tpl_vars['rider'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rider']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['ridersWithDriverArray']->value[$_smarty_tpl->tpl_vars['keyNumber']->value]; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -87,6 +88,11 @@ $_smarty_tpl->tpl_vars['rider']->_loop = true;
 			border: 2px solid #000000;
 			margin: 0px 5px 5px;
 			padding: 5px;
+			font-weight: bold;
+		}
+
+		#riders, .seats {
+			font-weight: normal;
 		}
 
 		#cars, #riders {
@@ -98,7 +104,38 @@ $_smarty_tpl->tpl_vars['rider']->_loop = true;
 	</style>
 
 	<script type='text/javascript'>
-		new Sortables([$$('.seats'), $('riders')]);
+		new Sortables([$$('.seats'), $('riders')], {
+			onStart : function(elmt) {
+				if (elmt.getParent('li')) {
+					var remainingSeats = elmt.getParent('li').get('data-driverCapacity') - elmt.getSiblings('li').length;
+					console.log(remainingSeats);
+					elmt.getParent('li').getChildren('span')[0].innerHTML=remainingSeats;
+					if (remainingSeats > 0) {
+						elmt.getParent('li').getChildren('span')[0].setStyles({
+							color : '#000000'
+						});
+						elmt.getParent('li').setStyles({
+							border : '2px solid #000000'
+						});
+					}
+				}
+
+			},
+			onComplete : function(elmt) {
+				if (elmt.getParent('li')) {
+					var remainingSeats = elmt.getParent('li').get('data-driverCapacity') - 2 - elmt.getSiblings('li').length;
+					elmt.getParent('li').getChildren('span')[0].innerHTML=remainingSeats;
+					if (remainingSeats <= 0) {
+						elmt.getParent('li').getChildren('span')[0].setStyles({
+							color : '#FF0000'
+						});
+						elmt.getParent('li').setStyles({
+							border : '2px solid #FF0000'
+						});
+					}
+				}
+			}
+		});
 
 		function createCarsArray() {
 			var drivers = [];
@@ -123,5 +160,7 @@ $_smarty_tpl->tpl_vars['rider']->_loop = true;
 			};
 			$NW.getPlugin('NWAjax').jsonRequest(o);
 		}
+
+
 	</script>
 <?php }} ?>
