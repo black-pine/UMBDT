@@ -11,6 +11,7 @@ class PeopleController extends \NovumWare\Zend\Mvc\Controller\AbstractActionCont
     public function newAction() {
 		if (!$this->getRequest()->isPost()) return;
 		$personForm = new PersonForm($this->getRequest()->getPost('newPersonForm'));
+
 		if (!$personForm->isValid()) { $this->nwFlashMessenger()->addErrorMessage(MessageConstants::ERROR_INVALID_FORM);  return; }
 
 		$peopleMapper = $this->getPeopleMapper();

@@ -45,23 +45,30 @@
 			display: inline-block;
 			vertical-align: top;
 		}
+
+		.full {
+			border: 2px solid #FF0000 !important;
+
+		}
+
+		.full span {
+			color: #FF0000;
+		}
 	</style>
 
 	<script type='text/javascript'>
+		window.addEvent('load', function(){
+			$('cars').getChildren('li').each(function(elmt) {
+				setCapacityStyling(elmt, elmt.get('data-driverCapacity') - 1 - elmt.getElement('.seats').getChildren('li').length);
+			});
+		});
+
 		new Sortables([$$('.seats'), $('riders')], {
 			onStart : function(elmt) {
 				if (elmt.getParent('li')) {
 					var remainingSeats = elmt.getParent('li').get('data-driverCapacity') - elmt.getSiblings('li').length;
-					console.log(remainingSeats);
 					elmt.getParent('li').getChildren('span')[0].innerHTML=remainingSeats;
-					if (remainingSeats > 0) {
-						elmt.getParent('li').getChildren('span')[0].setStyles({
-							color : '#000000'
-						});
-						elmt.getParent('li').setStyles({
-							border : '2px solid #000000'
-						});
-					}
+					setCapacityStyling(elmt.getParent('li'), remainingSeats);
 				}
 
 			},
@@ -69,17 +76,19 @@
 				if (elmt.getParent('li')) {
 					var remainingSeats = elmt.getParent('li').get('data-driverCapacity') - 2 - elmt.getSiblings('li').length;
 					elmt.getParent('li').getChildren('span')[0].innerHTML=remainingSeats;
-					if (remainingSeats <= 0) {
-						elmt.getParent('li').getChildren('span')[0].setStyles({
-							color : '#FF0000'
-						});
-						elmt.getParent('li').setStyles({
-							border : '2px solid #FF0000'
-						});
-					}
+					setCapacityStyling(elmt.getParent('li'), remainingSeats);
 				}
 			}
 		});
+
+		function setCapacityStyling(elmt, remainingSeats) {
+				if (remainingSeats > 0) {
+					elmt.removeClass('full');
+				}
+				else {
+					elmt.addClass('full');
+				}
+		}
 
 		function createCarsArray() {
 			var drivers = [];
