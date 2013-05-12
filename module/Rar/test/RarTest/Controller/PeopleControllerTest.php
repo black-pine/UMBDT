@@ -26,7 +26,7 @@ class PeopleControllerTest extends \NovumWare\Test\Controller\AbstractController
 		$this->assertResponseStatusCode(200);
 	}
 
-	public function testNewActionValidForm() {
+	public function NewActionValidForm() {
 		$data = array(
 			'name' => 'Name',
 			'email' => 'name@youremail.com',
@@ -40,6 +40,23 @@ class PeopleControllerTest extends \NovumWare\Test\Controller\AbstractController
 		$this->mockTableGateway->shouldReceive('insert')->with($this->getArrayCompareClosure($this->prefixDataArray($personModel->toArray(), 'person_')));
 		$this->dispatch('/rar/people/new', 'POST', array('newPersonForm' => $data));
 		$this->assertRedirect('/');
+	}
+
+	public function testCheckNameTakenActionValidName() {
+		$name = 'Name';
+		$select = $this->getSelect('people');
+		$select->where(array('person_name = ?' => $name));
+		$this->mockTableGateway->shouldReceive('selectWith')->with($this->getSqlStringCompareClosure($select))->once()->andReturn($this->createResultSetFromData([]));
+		//$this->getRequest()->set ->setHeader('X_REQUESTED_WITH', 'XMLHttpRequest');
+		$_SERVER['HTTP_X_REQUESTED_WITH'] = 'XMLHttpRequest';
+		$this->dispatch('/rar/people/check-name-taken/Name', 'GET', array('name' => $name));
+	}
+
+	public function CheckNameTakenActionInvalidName() {
+		$this->mockFlashMessenger->shouldReceive('addErrorMessage');
+		$this->dispatch('/rar/people/check-name-taken');
+		$this->assertNotActionName('checkNameTaken');
+		$this->assertNotRedirect();
 	}
 
 }
