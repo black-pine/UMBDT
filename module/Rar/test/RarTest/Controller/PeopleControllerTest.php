@@ -47,9 +47,10 @@ class PeopleControllerTest extends \NovumWare\Test\Controller\AbstractController
 		$select = $this->getSelect('people');
 		$select->where(array('person_name = ?' => $name));
 		$this->mockTableGateway->shouldReceive('selectWith')->with($this->getSqlStringCompareClosure($select))->once()->andReturn($this->createResultSetFromData([]));
-		//$this->getRequest()->set ->setHeader('X_REQUESTED_WITH', 'XMLHttpRequest');
-		$_SERVER['HTTP_X_REQUESTED_WITH'] = 'XMLHttpRequest';
+		$this->setAjaxRequest();
 		$this->dispatch('/rar/people/check-name-taken/Name', 'GET', array('name' => $name));
+		$response = $this->getJsonResponse();
+		$this->assertEquals($response->nameTaken, false);
 	}
 
 	public function CheckNameTakenActionInvalidName() {

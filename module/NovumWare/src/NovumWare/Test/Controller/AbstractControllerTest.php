@@ -5,6 +5,7 @@ use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\Sql\Delete;
 use Zend\Db\Sql\Select;
 use Zend\Db\Sql\Update;
+use Zend\Json\Json;
 
 abstract class AbstractControllerTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase
 {
@@ -164,5 +165,22 @@ abstract class AbstractControllerTest extends \Zend\Test\PHPUnit\Controller\Abst
 			return true;
 		});
 	}
+
+	 /**
+      * Makes the dispatch a Ajax request
+      */
+      protected function setAjaxRequest() {
+		  $this->getRequest()->getHeaders()->addHeaders(array('X-Requested-With' => 'XMLHttpRequest'));
+      }
+
+	  /**
+       * Gets the Json reponse as a php array
+       *
+       * @return array
+       */
+       protected function getJsonResponse() {
+		   return Json::decode($this->getResponse()->getBody(), Json::TYPE_OBJECT);
+       }
+
 
 }
