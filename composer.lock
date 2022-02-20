@@ -5,7 +5,7 @@
     ],
     "hash": "624688ca66113c2ccb1f7a15c576c378",
     "packages": [
-        {
+        /*{
             "name": "maxnuf/maxnuf-smarty",
             "version": "dev-master",
             "source": {
@@ -50,7 +50,7 @@
                 "zf2"
             ],
             "time": "2013-04-13 14:10:47"
-        },
+        },*/
         {
             "name": "mockery/mockery",
             "version": "dev-master",
@@ -105,7 +105,7 @@
             ],
             "time": "2013-05-08 16:54:26"
         },
-        {
+        /*{
             "name": "smarty/smarty",
             "version": "v3.1.13",
             "source": {
@@ -147,7 +147,7 @@
                 "templating"
             ],
             "time": "2013-01-26 12:03:52"
-        },
+        },*/
         {
             "name": "zendframework/zendframework",
             "version": "2.1.5",
@@ -267,10 +267,10 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": {
+    /*"stability-flags": {
         "maxnuf/maxnuf-smarty": 20,
         "mockery/mockery": 20
-    },
+    },*/
     "platform": {
         "php": ">=5.3.3"
     },
